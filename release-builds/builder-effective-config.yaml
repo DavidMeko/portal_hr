@@ -1,0 +1,24 @@
+directories:
+  output: release-builds
+  buildResources: build
+appId: com.yourcompany.hrportal
+productName: HR Portal
+files:
+  - filter:
+      - build/**/*
+      - main.js
+      - preload.js
+      - index.html
+      - electron/**/*
+extraResources:
+  - from: node_modules/sqlite3/lib/binding/napi-v6-win32-x64
+    to: sqlite3
+    filter:
+      - '*.node'
+win:
+  target:
+    - portable
+publish:
+  provider: generic
+  url: \\ism\hr\IT\portalHR\update
+electronVersion: 24.8.8
